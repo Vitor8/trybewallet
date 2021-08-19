@@ -1,0 +1,104 @@
+.header-wallet {
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.data-header { 
+  margin-left: 10px
+}
+
+.logo-header {
+  border-radius: 4px;
+}
+
+.form-wallet {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(65, 63, 63);
+  height: 50px;
+  color: white;
+}
+
+.method-tag-wallet {
+  display: flex;
+}
+
+.input-wallet-value {
+  height: 28px;
+  margin-left: 5px;
+}
+
+.input-wallet-description {
+  height: 28px;
+  margin-left: 5px;
+}
+
+.input-wallet-currency {
+  height: 35px;
+  margin-left: 5px;
+}
+
+.input-wallet-method {
+  height: 35px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.input-wallet-tag {
+  height: 35px;
+  margin-left: 5px;
+}
+
+.button {
+  height: 35px;
+  color: white;
+  background-color: rgb(5, 5, 131);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.label-wallet-description {
+  display: flex;
+  align-items: center;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-table {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  background-color: rgb(94, 88, 88);
+  height: 50px;
+}
+
+.row-table {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2px;
+  background-color: rgb(228, 224, 224);
+  height: 45px;
+}
+
+.header-title {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-content {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}

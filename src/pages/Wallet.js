@@ -70,25 +70,25 @@ class Wallet extends React.Component {
 
   renderMethodAndTag() {
     return (
-      <div>
+      <div className="method-tag-wallet">
         <label htmlFor="pagamento">
-          Método de pagamento :
+          Método de pagamento
           <select
             id="pagamento"
             onChange={ (e) => this.setState({ method: e.target.value }) }
+            className="input-wallet-method"
           >
             <option value="Dinheiro">Dinheiro</option>
             <option value="Cartão de crédito">Cartão de crédito</option>
             <option value="Cartão de débito">Cartão de débito</option>
           </select>
         </label>
-        {' '}
-        <br />
         <label htmlFor="tag">
-          Tag :
+          Tag
           <select
             id="tag"
             onChange={ (e) => this.setState({ tag: e.target.value }) }
+            className="input-wallet-tag"
           >
             <option value="Alimentação">Alimentação</option>
             <option value="Lazer">Lazer</option>
@@ -105,29 +105,31 @@ class Wallet extends React.Component {
     const { expenses } = this.props;
     return (
       <div>
-        <table>
+        <table className="table">
           <HeaderTable />
           { expenses.map((expense, index) => {
             const valueToConvert = expense.value;
             const exchangeRate = expense.exchangeRates[expense.currency].ask;
             const convertedValue = valueToConvert * exchangeRate;
             return (
-              <tr key={ index }>
-                <td>{ expense.description }</td>
-                <td>{ expense.tag }</td>
-                <td>{ expense.method }</td>
-                <td>{ expense.value }</td>
-                <td>{ expense.exchangeRates[expense.currency].name }</td>
-                <td>
+              <tr key={ index } className="row-table">
+                <td className="table-content">{ expense.description }</td>
+                <td className="table-content">{ expense.tag }</td>
+                <td className="table-content">{ expense.method }</td>
+                <td className="table-content">{ expense.value }</td>
+                <td className="table-content">
+                  { expense.exchangeRates[expense.currency].name }
+                </td>
+                <td className="table-content">
                   { (Math.round(exchangeRate * 100) / 100) }
                 </td>
-                <td>
+                <td className="table-content">
                   {
                     Math.round(convertedValue * 100) / 100
                   }
                 </td>
-                <td>Real</td>
-                <td>
+                <td className="table-content">Real</td>
+                <td className="table-content">
                   <button
                     id={ expense.id }
                     type="button"
@@ -160,32 +162,23 @@ class Wallet extends React.Component {
   renderForm() {
     const { currencies } = this.props;
     return (
-      <form>
+      <form className="form-wallet">
         <label htmlFor="value">
-          Valor :
+          Valor
           <input
             id="value"
             type="text"
             name="valor"
             onChange={ (e) => this.setState({ value: e.target.value }) }
+            className="input-wallet-value"
           />
         </label>
-        <br />
-        <label htmlFor="description">
-          Descrição :
-          <textarea
-            id="description"
-            type="text"
-            name="description"
-            onChange={ (e) => this.setState({ description: e.target.value }) }
-          />
-        </label>
-        <br />
         <label htmlFor="moeda">
-          Moeda :
+          Moeda
           <select
             id="moeda"
             onChange={ (e) => this.setState({ chosenCurrency: e.target.value }) }
+            className="input-wallet-currency"
           >
             { Object.keys(currencies).map((currency) => {
               if (currency !== 'USDT' && currency !== 'DOGE') {
@@ -196,10 +189,18 @@ class Wallet extends React.Component {
             }) }
           </select>
         </label>
-        <br />
         { this.renderMethodAndTag() }
-        <br />
-        <button type="button" onClick={ () => this.addExpense() }>
+        <label htmlFor="description" className="label-wallet-description">
+          <span>Descrição</span>
+          <textarea
+            id="description"
+            type="text"
+            name="description"
+            onChange={ (e) => this.setState({ description: e.target.value }) }
+            className="input-wallet-description"
+          />
+        </label>
+        <button type="button" onClick={ () => this.addExpense() } className="button">
           Adicionar despesa
         </button>
       </form>
@@ -213,11 +214,8 @@ class Wallet extends React.Component {
       <div>
         <span>{ this.renderHeader() }</span>
         <span>{ !shouldRenderForm ? <p>Carregando...</p> : this.renderForm() }</span>
-        <br />
         <div>
-          {' '}
           { expenses.length === 0 ? <div /> : this.renderTable() }
-          {' '}
         </div>
       </div>
     );

@@ -1,0 +1,21 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16%;
+  border: 2px solid gray;
+  border-radius: 8px;
+  box-shadow: 2px 2px grey;
+  width: 245px;
+  align-items: center;
+  margin-left: 40%;
+  padding: 25px;
+  background-color: rgb(216, 215, 215);
+}
+
+.button-login {
+  width: 100px;
+}
+
+.login-inputs {
+  margin-left: 15px;
+}

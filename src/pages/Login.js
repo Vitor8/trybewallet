@@ -3,6 +3,7 @@ import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as userAction from '../actions/index';
+import '../css/Login.css';
 
 class Login extends React.Component {
   constructor(props) {
@@ -48,15 +49,16 @@ class Login extends React.Component {
   render() {
     const { isDisabled, shouldRedirectToWallet } = this.state;
     return (
-      <div>
+      <div className="login-container">
         <label htmlFor="email">
-          Email:
+          Email
           <input
             name="email"
             type="email"
             id="email"
             data-testid="email-input"
             onChange={ this.handleChange }
+            className="login-inputs"
           />
         </label>
         {' '}
@@ -64,13 +66,14 @@ class Login extends React.Component {
         {' '}
         <br />
         <label htmlFor="password">
-          Senha:
+          Senha
           <input
             name="password"
             type="password"
             id="password"
             data-testid="password-input"
             onChange={ this.handleChange }
+            className="login-inputs"
           />
         </label>
         {' '}
@@ -81,6 +84,7 @@ class Login extends React.Component {
           type="button"
           disabled={ isDisabled }
           onClick={ () => this.redirectToWallet() }
+          className="button-login"
         >
           Entrar
         </button>
