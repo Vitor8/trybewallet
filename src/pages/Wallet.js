@@ -15,8 +15,8 @@ class Wallet extends React.Component {
       value: '',
       description: '',
       chosenCurrency: 'USD',
-      method: '',
-      tag: '',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
     };
     this.showCurrencies = this.showCurrencies.bind(this);
   }
@@ -131,10 +131,10 @@ class Wallet extends React.Component {
                 <td className="table-content">Real</td>
                 <td className="table-content">
                   <button
-                    id={ expense.id }
+                    value={ expense.id }
                     type="button"
                     data-testid="delete-btn"
-                    onClick={ () => this.removeExpense(index, convertedValue) }
+                    onClick={ () => this.removeExpense(expense.id, convertedValue) }
                   >
                     Deletar
                   </button>
