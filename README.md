@@ -1,7 +1,18 @@
-Aplicação React que simula um jogo de perguntas e respostas. A manipulação do estado global da aplicação é feita usando Redux.
+Aplicação React que simula uma carteira de despesas. A manipulação do estado global da aplicação é feita usando Redux.
 
-Link GitHub Pages: vitor8.github.io/trivia/
+Link GitHub Pages: vitor8.github.io/trybewallet/
 
-O jogo é um Quiz. Na tela inicial o usuário digita seu nome e email. Ao clicar em Jogar, 5 perguntas serão renderizadas, sendo que só uma é correta. O tempo para responder cada questão é 30 segundos. Quanto mais rápido o usuário responder maior será sua pontuação. Ao final do jogo é renderizado a tela de Resultados. O usuário então pode escolher 'Jogar Novamente' ou ver o 'Ranking'. O resultado de cada jogo é salvo no Local Storage. Logo, quando o usuário entra na tela de 'Ranking', a paǵina busca o histórico no Local Storage e o renderiza.
+Passo a Passo para a instalção do projeto:
 
-Obrigado pelo interesse!!
+Fork o repositório
+Clone o repositório: git clone git@github.com:Vitor8/trybewallet.git
+Entre na pasta: cd trybewallet
+Instale as seguintes dependências:
+  - npm install
+Rode a aplicação com: npm-start
+
+Inicialmente, a aplicação faz requisição a uma API cujo resultado é o preço do câmbio BRL em diferentes moedas.
+
+O objetivo do app é o usuário ter um lugar para armazenar suas diferentes despesas, em várias possíveis moedas. 
+
+No momento de inserir uma despesa, o usuário deve digitar seu valor, a moeda em questão, o método de pagamento, o tipo de gasto, e uma descrição. Ao clicar no botão 'Adicionar despesa', o gasto em questão será adicionado a lista a ser renderizada. Ao fim, o usuário também tem a opção de deletar aquela despesa.  
