@@ -2,6 +2,8 @@ Aplicação React que simula uma carteira de despesas. A manipulação do estado
 
 Link GitHub Pages: vitor8.github.io/trybewallet/
 
+![Captura de tela de 2021-08-25 14-15-02](https://user-images.githubusercontent.com/24492328/130835704-73ac54c5-f1b5-4cc3-b661-b83da650d746.png)
+
 Passo a Passo para a instalção do projeto:
 
 Fork o repositório
